@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "noEmit": true,
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "noFallthroughCasesInSwitch": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "exactOptionalPropertyTypes": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "isolatedModules": false,
+        "checkJs": true,
+        "skipLibCheck": true,
+        "types": [
+            "vitest/globals"
+        ]
+    },
+    "include": [
+        "./index.ts",
+        "test",
+        "eslint.config.mjs",
+        "vitest.config.mts"
+    ]
+}
