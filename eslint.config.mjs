@@ -13,7 +13,6 @@ export default tseslint.config(
 	{
 		...unicorn.recommended,
 		...sonarjs.configs.recommended,
-		...functional.configs?.['strict'],
 		...stylistic.configs['recommended-flat'],
 		languageOptions: {
 			ecmaVersion: 'latest',
@@ -24,9 +23,12 @@ export default tseslint.config(
 			},
 		},
 		plugins: {
+			functional: functional,
 			'@stylistic': stylistic,
 		},
 		rules: {
+			...functional.configs?.['recommended']?.rules,
+			...functional.configs?.['stylistic']?.rules,
 			'@stylistic/indent': ['error', 'tab'],
 			'@stylistic/linebreak-style': ['error', 'unix'],
 			'@stylistic/quotes': ['error', 'single'],
@@ -41,5 +43,14 @@ export default tseslint.config(
 			'@stylistic/no-mixed-spaces-and-tabs': 'error',
 			'@stylistic/object-curly-spacing': ['error', 'always']
 		},
+	},
+	{
+		files: ['**/*.test.ts'],
+		plugins: {
+			functional: functional,
+		},
+		rules: {
+			...functional.configs?.['off']?.rules
+		}
 	}
 );
